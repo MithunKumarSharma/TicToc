@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/tictoc"
     android:layout_row="3"
     android:layout_column="3"
     tools:context=".MainActivity">
@@ -107,6 +108,7 @@
             android:layout_marginTop="16dp"
             android:onClick="dropIn"
             android:tag="8" />
+
     </GridLayout>
 
     <TextView
@@ -117,6 +119,7 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="163dp"
         android:layout_marginBottom="91dp"
+        android:textColor="@color/colorWhite"
         android:text="TextView"
         android:textSize="20sp"
         android:visibility="invisible"
@@ -126,15 +129,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/playAgainButton"
         android:layout_width="wrap_content"
         android:layout_height="51dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="95dp"
         android:onClick="playAgain"
         android:text="Play Again"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/exitButton"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="3dp"
+        android:onClick="exitGame"
+        android:text="Exit"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/playAgainButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
             counter.animate().translationYBy(1500).rotation(3600).setDuration(100);
 
             for (int[] winningPosition : winningPositions) {
-                //Button playAgainButton = (Button) findViewById(R.id.playAgainButton);
                 TextView winnerTextView = (TextView) findViewById(R.id.winnerTextView);
                 String winner = "";
                 if (gameState[winningPosition[0]] == gameState[winningPosition[1]]
@@ -57,9 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
                     winnerTextView.setText(winner + " has won!");
 
-                    //playAgainButton.setVisibility(View.VISIBLE);
-
                     winnerTextView.setVisibility(View.VISIBLE);
+
                 }
             }
         }
@@ -67,11 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void playAgain(View view) {
 
-        Button playAgainButton = (Button) findViewById(R.id.playAgainButton);
-
         TextView winnerTextView = (TextView) findViewById(R.id.winnerTextView);
-
-        //playAgainButton.setVisibility(View.INVISIBLE);
 
         winnerTextView.setVisibility(View.INVISIBLE);
 
@@ -95,5 +88,9 @@ public class MainActivity extends AppCompatActivity {
 
         gameActive = true;
 
+    }
+
+    public void exitGame(View view){
+        finish();
     }
 }
